@@ -3,7 +3,7 @@ package edu.mills.cs180;
 /**
  * A static utility class for testing whether strings are palindromes.
  *
- * @author Ellen Spertus
+ * @author Katrina Eaton
  */
 public class PalindromeChecker {
     private PalindromeChecker() {}
@@ -17,6 +17,12 @@ public class PalindromeChecker {
      * @return true if the string is a palindrome, false otherwise
      */
     public static boolean isPalindrome(String s) {
+        s = s.replaceAll("[^A-Za-z0-9]", "");
+        StringBuilder sb = new StringBuilder(s);
+        sb.reverse();
+        if (s.equalsIgnoreCase(sb.toString())) {
+            return true;
+        }
         return false;
     }
 }
